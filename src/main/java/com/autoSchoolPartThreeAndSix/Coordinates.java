@@ -8,7 +8,7 @@ public class Coordinates {
     private static int i;
     static int points;
 
-    public static int[] arrayX(int points) { // тут мне подсказали сделать массив с параметром, но зато теперь я знаю
+    public static int[] getArray(int points) { // тут мне подсказали сделать массив с параметром, но зато теперь я знаю
                                             // я же делала массивы по 4 координаты, а в формулы брала нужное кол-во только
 
         int[] arrayX = new int[points];
@@ -17,16 +17,5 @@ public class Coordinates {
             arrayX[i] = random.nextInt(50 + 1);
         }
         return arrayX;
-    }
-
-    public static int[] arrayY(int points) {
-
-        int[] arrayY = new int[points];
-        Random random = new Random();
-        for (int i = 0; i < arrayY.length; i++) {
-            arrayY[i] = random.nextInt(50 + 1);
-        }
-        //
-        return arrayY;
     }
 }

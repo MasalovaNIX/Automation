@@ -22,7 +22,7 @@ public class Circle extends Figures {
         } return area;
     }
 
-    public String toString() {
-        return this.name+ " Coordinates X: " + Arrays.toString(this.arrayX) + " Coordinates Y: "+Arrays.toString(this.arrayY) + " Area " + countedArea();
-    }
+//    public String toString() {
+//        return this.name+ " Coordinates X: " + Arrays.toString(this.arrayX) + " Coordinates Y: "+Arrays.toString(this.arrayY) + " Area " + countedArea();
+//    }
 }

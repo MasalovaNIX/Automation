@@ -20,9 +20,9 @@ public class Square extends Figures {
         } return area;
     }
 
-    public String toString() {
-        return this.name+ " Coordinates X: " + Arrays.toString(this.arrayX) + " Coordinates Y: "+Arrays.toString(this.arrayY) + " Area " + countedArea();
-    }
+//    public String toString() {
+//        return this.name+ " Coordinates X: " + Arrays.toString(this.arrayX) + " Coordinates Y: "+Arrays.toString(this.arrayY) + " Area " + countedArea();
+//    }
 //тут был найдет метод ту стринг, поскольку эррей не выводился на печать через обьект, получалась фигня в виде хэша( (типа такого com.autoSchoolPartThreeAndSix.figure.Triangle@4554617c)
 // а теперь вот красота какая) я там законентировала в мэйне, если хочешь - глянь
 }

@@ -10,16 +10,16 @@ public class Triangle extends Figures {
     public Triangle() {
         this.name = "Triangle";
         this.point = 3;
-        this.arrayX = Coordinates.arrayX(3);
-        this.arrayY = Coordinates.arrayY(3);
+        this.arrayX = Coordinates.getArray(3);
+        this.arrayY = Coordinates.getArray(3);
     }
 
-    public double countedArea(){
-        double area = Math.round((Math.pow((arrayX[1]- arrayX[0]),2)*(Math.pow(arrayY[0] - arrayY[1], 2)))/2);{
+    public double countedArea(int[] x, int[] y){
+        double area = Math.round((Math.pow((x[1]- x[0]),2)*(Math.pow(arrayY[0] - arrayY[1], 2)))/2);{
         } return area;
     }
 
-    public String toString() {
-        return this.name+ " Coordinates X: " + Arrays.toString(this.arrayX) + " Coordinates Y: "+Arrays.toString(this.arrayY) + " Area " + countedArea();
-    }
+//    public String toString() {
+//        return this.name+ " Coordinates X: " + Arrays.toString(this.arrayX) + " Coordinates Y: "+Arrays.toString(this.arrayY) + " Area " + countedArea();
+//    }
 }

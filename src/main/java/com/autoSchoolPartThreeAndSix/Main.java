@@ -15,7 +15,10 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Figures[] list = new Figures[10];
+        createRandomFigures(10)
+
+        public static Figures createRandomFigure(int numbers) {
+        Figures[] list = new Figures[numbers];
         for (int i = 0; i < list.length; i++) {
             int a = 2 + (int) (Math.random() * 3);
             if (a == 2) {
@@ -27,9 +30,11 @@ public class Main {
             if (a == 4) {
                 list[i] = new Triangle();
             }
+            return list;
+        }
            // System.out.println(list[i]);
 
-
+    sortFigures(int[] unsortedFigures){
             TreeMap<Double, String> sortedArea = new TreeMap<Double, String>();
 
             sortedArea.put(list[0].getCountedArea(), list[0].getName());
@@ -46,6 +51,7 @@ public class Main {
             for (Map.Entry m : sortedArea.entrySet()) {
                 System.out.println(m.getValue() + " " + m.getKey());
             }
+            return int[] sortedFigures;
         }
 
 

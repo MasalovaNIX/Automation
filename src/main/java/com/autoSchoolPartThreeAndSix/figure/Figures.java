@@ -7,9 +7,9 @@ public abstract class Figures {
     static int[] arrayY;
     private static double countedArea;
 
-    public Figures() {
-
-    }
+//    public Figures() {
+//
+//    }
 
     public void setName(String name) {
         Figures.name = name;
@@ -33,5 +33,9 @@ public abstract class Figures {
 
     public static double getCountedArea() {
         return countedArea;
+    }
+
+    public static void setCountedArea(double countedArea) {
+        Figures.countedArea = countedArea;
     }
 }

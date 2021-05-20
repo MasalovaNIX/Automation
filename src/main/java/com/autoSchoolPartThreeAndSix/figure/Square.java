@@ -1,77 +1,28 @@
 package com.autoSchoolPartThreeAndSix.figure;
-
-import java.io.IOException;
-import java.util.Random;
+import com.autoSchoolPartThreeAndSix.Coordinates;
+import java.util.Arrays;
 
 public class Square extends Figures {
 
-    private String name;
-    private static int i;
-
-    private static int[] arrayX;
-    private static int[] arrayY;
+    private static int point;
     double countArea;
 
-    public Square(String name) {
-        super(name);
+    public Square() {
+       this.name = "Square";
+       this.point = 4;
+       this.arrayX = Coordinates.arrayX(4);
+       this.arrayY = Coordinates.arrayY(4);
+       this.countArea = countedArea();
     }
 
-
-    public static void main(String[] args) throws IOException {
-        Square squareOne = new Square("Square");
-        //arrayX();
-        //arrayY();
-        countedArea(arrayX(), arrayY());
+    public double countedArea()  {
+        double area = Math.round(Math.pow((arrayX[1]- arrayX[0]),2));{
+        } return area;
     }
 
-    public static int[] arrayX() throws IOException {
-        int[] arrayX = new int[4];
-        Random random = new Random();
-        for (int i = 0; i < arrayX.length; i++) {
-            arrayX[i] = random.nextInt(50 + 1);
-        }
-        for (i = arrayX.length - 1; i >= 0; i--) {
-            System.out.println(arrayX[i]);
-        }
-        return arrayX;
+    public String toString() {
+        return this.name+ " Coordinates X: " + Arrays.toString(this.arrayX) + " Coordinates Y: "+Arrays.toString(this.arrayY) + " Area " + countedArea();
     }
-
-    public static int[] arrayY() throws IOException {
-        int[] arrayY = new int[4];
-        Random random = new Random();
-        for (int i = 0; i < arrayY.length; i++) {
-            arrayY[i] = random.nextInt(50 + 1);
-        }
-        for (i = arrayY.length - 1; i >= 0; i--) {
-            System.out.println(arrayY[i]);
-        }
-        return arrayY;
-    }
-
-    public static void setArrayX(int[] arrayX) {
-
-        Square.arrayX = arrayX;
-    }
-
-    public static void setArrayY(int[] arrayY) {
-
-        Square.arrayY = arrayY;
-    }
-
-    public static int[] getArrayX() {
-
-        return arrayX;
-    }
-
-    public static int[] getArrayY() {
-
-        return arrayY;
-    }
-
-    public static void countedArea(int[] arrayX, int[] arrayY) throws IOException {
-
-        double area = Math.sqrt(((arrayX[1] - arrayX[0]) * (arrayX[1] - arrayX[0])) + ((arrayY[1] - arrayY[0]) * (arrayY[1] - arrayY[0])));
-        //return area;
-        System.out.println(area);
-    }
+//тут был найдет метод ту стринг, поскольку эррей не выводился на печать через обьект, получалась фигня в виде хэша( (типа такого com.autoSchoolPartThreeAndSix.figure.Triangle@4554617c)
+// а теперь вот красота какая) я там законентировала в мэйне, если хочешь - глянь
 }

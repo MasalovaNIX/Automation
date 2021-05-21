@@ -1,6 +1,8 @@
 package com.autoSchoolPartThreeAndSix;
+
 import java.util.TreeMap;
 import java.util.*;
+
 import com.autoSchoolPartThreeAndSix.figure.*;
 
 public class Main {
@@ -8,11 +10,10 @@ public class Main {
 
     public static void main(String[] args) {
 
+
     }
 
-
-
- public static int[] createArrayOfRandomCoordinates(int points) {
+    public static int[] createArrayOfRandomCoordinates(int points) {
 
         int[] arrayOfCoordinates = new int[points];
         Random random = new Random();
@@ -22,7 +23,7 @@ public class Main {
         return arrayOfCoordinates;
     }
 
-        public static Figures[] createArrayOfRandomFigures(int numbers) {
+    public static Figures[] createArrayOfRandomFigures(int numbers) {
         Figures[] arrayOfRandomFigures = new Figures[numbers];
         for (int i = 0; i < arrayOfRandomFigures.length; i++) {
             int a = 2 + (int) (Math.random() * 3);
@@ -33,11 +34,13 @@ public class Main {
                 arrayOfRandomFigures[i] = new Circle("Circle", createArrayOfRandomCoordinates(2), createArrayOfRandomCoordinates(2));
             }
             if (a == 4) {
-                arrayOfRandomFigures[i] = new Triangle("Triangle",createArrayOfRandomCoordinates(3), createArrayOfRandomCoordinates(3));
+                arrayOfRandomFigures[i] = new Triangle("Triangle", createArrayOfRandomCoordinates(3), createArrayOfRandomCoordinates(3));
             }
         }
-            return arrayOfRandomFigures;
+        return arrayOfRandomFigures;
     }
+}
+
 
 //    public static void createTreeMapOfFigures() {
 //            TreeMap<Double, String> sortedArea = new TreeMap<Double, String>();
@@ -60,5 +63,5 @@ public class Main {
 //        }
 
 
-    }
+
 

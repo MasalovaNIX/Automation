@@ -11,9 +11,25 @@ public abstract class Figures {
         this.arrayY = arrayY;
    }
 
-    public abstract double getArea();
+    public abstract double countArea(int[] arrayX, int[] arrayY);
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
 
 }
+
+
+
+
+
+
+
+
 
 
 //    static String name;

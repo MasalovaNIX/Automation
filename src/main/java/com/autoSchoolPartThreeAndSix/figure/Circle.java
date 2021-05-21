@@ -6,14 +6,21 @@ public class Circle extends Figures {
 
     private double area;
 
-        public Circle(String name, int[] arrayX, int[] arrayY){
-            super(name, arrayX, arrayY);
-            this.area = getArea();
-        }
-
-    public double getArea(){
-        return Math.round(Math.PI *((Math.pow((arrayX[0] - arrayX[1]), 2) + (Math.pow(arrayY[0] - arrayY[1], 2)))));
+    public Circle(String name, int[] arrayX, int[] arrayY) {
+        super(name, arrayX, arrayY);
     }
+
+    public double countArea(int[] arrayX, int[] arrayY) {
+        return Math.round(Math.PI * ((Math.pow((arrayX[0] - arrayX[1]), 2) + (Math.pow(arrayY[0] - arrayY[1], 2)))));
+    }
+}
+
+
+
+
+
+
+
 
 //    private int point;
 //    double countArea;
@@ -34,4 +41,4 @@ public class Circle extends Figures {
 //    public String toString() {
 //        return this.name+ " Coordinates X: " + Arrays.toString(this.arrayX) + " Coordinates Y: "+Arrays.toString(this.arrayY) + " Area " + countedArea();
 //    }
-}
+

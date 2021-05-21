@@ -1,16 +1,15 @@
 package com.autoSchoolPartThreeAndSix;
-
 import java.util.TreeMap;
 import java.util.*;
-
 import com.autoSchoolPartThreeAndSix.figure.*;
+
 
 public class Main {
 
-
     public static void main(String[] args) {
 
-
+        System.out.println("Массив фигур отсортирован в порядке возрастания площади:");
+        createTreeMapOfFigures();
     }
 
     public static int[] createArrayOfRandomCoordinates(int points) {
@@ -39,29 +38,21 @@ public class Main {
         }
         return arrayOfRandomFigures;
     }
+
+    public static void createTreeMapOfFigures() {
+        TreeMap<Double, String> sortedArea = new TreeMap<Double, String>();
+
+        Figures[] arrayForSort = createArrayOfRandomFigures(10);
+
+        for (int i = 0; i < arrayForSort.length; i++) {
+
+            sortedArea.put(arrayForSort[i].countArea(arrayForSort[i].getArrayX(), arrayForSort[i].getArrayY()), arrayForSort[i].getName());
+        }
+        for (Map.Entry m : sortedArea.entrySet()) {
+            System.out.println(m.getValue() + " " + m.getKey());
+        }
+    }
 }
-
-
-//    public static void createTreeMapOfFigures() {
-//            TreeMap<Double, String> sortedArea = new TreeMap<Double, String>();
-//
-//            sortedArea.put(list[0].getArea(), list[0].getName());
-//            sortedArea.put(list[1].getArea(), list[1].getName());
-//            sortedArea.put(list[2].getArea(), list[2].getName());
-//            sortedArea.put(list[3].getArea(), list[3].getName());
-//            sortedArea.put(list[4].getArea(), list[4].getName());
-//            sortedArea.put(list[5].getArea(), list[5].getName());
-//            sortedArea.put(list[6].getArea(), list[6].getName());
-//            sortedArea.put(list[7].getArea(), list[7].getName());
-//            sortedArea.put(list[8].getArea(), list[8].getName());
-//            sortedArea.put(list[9].getArea(), list[9].getName());
-//
-////            for (Map.Entry m : sortedArea.entrySet()) {
-////                System.out.println(m.getValue() + " " + m.getKey());
-////            }
-//            System.out.println(sortedArea);
-//        }
-
 
 
 

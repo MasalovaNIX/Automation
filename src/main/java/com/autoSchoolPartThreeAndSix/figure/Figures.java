@@ -9,12 +9,28 @@ public abstract class Figures {
         this.name = name;
         this.arrayX = arrayX;
         this.arrayY = arrayY;
-   }
+    }
 
     public abstract double countArea(int[] arrayX, int[] arrayY);
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setArrayX(int[] arrayX) {
+        this.arrayX = arrayX;
+    }
+
+    public void setArrayY(int[] arrayY) {
+        this.arrayY = arrayY;
+    }
+
+    public int[] getArrayX() {
+        return arrayX;
+    }
+
+    public int[] getArrayY() {
+        return arrayY;
     }
 
     public String getName() {
@@ -24,43 +40,3 @@ public abstract class Figures {
 }
 
 
-
-
-
-
-
-
-
-
-//    static String name;
-//    static int[] arrayX;
-//    static int[] arrayY;
-//    private static double countedArea;
-//
-//    public Figures() {
-//
-//    }
-//
-//    public void setName(String name) {
-//        Figures.name = name;
-//    }
-//
-//    public static String getName() {
-//        return name;
-//    }
-//
-//    public static int[] getArrayX() {
-//        return arrayX;
-//    }
-//
-//    public static int[] getArrayY() {
-//        return arrayY;
-//    }
-//
-//    public double countedArea(){
-//        return countedArea;
-//    }
-//
-//    public static double getCountedArea() {
-//        return countedArea;
-//    }

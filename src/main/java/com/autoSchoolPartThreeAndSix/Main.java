@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Массив фигур отсортирован в порядке возрастания площади:");
-        createTreeMapOfFigures();
+        createTreeMapOfFigures(10);
     }
 
     public static int[] createArrayOfRandomCoordinates(int points) {
@@ -39,16 +39,16 @@ public class Main {
         return arrayOfRandomFigures;
     }
 
-    public static void createTreeMapOfFigures() {
-        TreeMap<Double, String> sortedArea = new TreeMap<Double, String>();
+    public static void createTreeMapOfFigures(int numbers) {
+        Map<Double, String> sortedArea = new TreeMap<>();
 
-        Figures[] arrayForSort = createArrayOfRandomFigures(10);
+        Figures[] arrayForSort = createArrayOfRandomFigures(numbers);
 
-        for (int i = 0; i < arrayForSort.length; i++) {
+        for (Figures figures : arrayForSort) {
 
-            sortedArea.put(arrayForSort[i].countArea(arrayForSort[i].getArrayX(), arrayForSort[i].getArrayY()), arrayForSort[i].getName());
+            sortedArea.put(figures.countArea(figures.getArrayX(), figures.getArrayY()), figures.getName());
         }
-        for (Map.Entry m : sortedArea.entrySet()) {
+        for (Map.Entry<Double, String> m : sortedArea.entrySet()) {
             System.out.println(m.getValue() + " " + m.getKey());
         }
     }

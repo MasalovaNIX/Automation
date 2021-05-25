@@ -1,9 +1,9 @@
 package com.autoSchoolPartThreeAndSix.figure;
 
 public abstract class Figures {
-    String name;
-    int[] arrayX;
-    int[] arrayY;
+    private String name;
+    private int[] arrayX;
+    private int[] arrayY;
 
     public Figures(String name, int[] arrayX, int[] arrayY) {
         this.name = name;

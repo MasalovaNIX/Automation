@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Массив фигур отсортирован в порядке возрастания площади:");
-        createTreeMapOfFigures(10);
+        createTreeMapOfFigures();
     }
 
     public static int[] createArrayOfRandomCoordinates(int points) {
@@ -27,29 +27,33 @@ public class Main {
         for (int i = 0; i < arrayOfRandomFigures.length; i++) {
             int a = 2 + (int) (Math.random() * 3);
             if (a == 2) {
-                arrayOfRandomFigures[i] = new Square("Square", createArrayOfRandomCoordinates(4), createArrayOfRandomCoordinates(4));
+                arrayOfRandomFigures[i] = new Square(((i +1) + " Square"), createArrayOfRandomCoordinates(4), createArrayOfRandomCoordinates(4));
             }
             if (a == 3) {
-                arrayOfRandomFigures[i] = new Circle("Circle", createArrayOfRandomCoordinates(2), createArrayOfRandomCoordinates(2));
+                arrayOfRandomFigures[i] = new Circle(((i +1) + " Circle"), createArrayOfRandomCoordinates(2), createArrayOfRandomCoordinates(2));
             }
             if (a == 4) {
-                arrayOfRandomFigures[i] = new Triangle("Triangle", createArrayOfRandomCoordinates(3), createArrayOfRandomCoordinates(3));
+                arrayOfRandomFigures[i] = new Triangle(((i +1) + " Triangle"), createArrayOfRandomCoordinates(3), createArrayOfRandomCoordinates(3));
             }
         }
         return arrayOfRandomFigures;
     }
 
-    public static void createTreeMapOfFigures(int numbers) {
-        Map<Double, String> sortedArea = new TreeMap<>();
+    public static void createTreeMapOfFigures() {
+        TreeMap<Double, String> sortedArea = new TreeMap<Double, String>();
 
-        Figures[] arrayForSort = createArrayOfRandomFigures(numbers);
+        Figures[] arrayForSort = createArrayOfRandomFigures(10);
 
-        for (Figures figures : arrayForSort) {
+        for (int i = 0; i < arrayForSort.length; i++) {
 
-            sortedArea.put(figures.countArea(figures.getArrayX(), figures.getArrayY()), figures.getName());
+            sortedArea.put(arrayForSort[i].countArea(arrayForSort[i].getArrayX(), arrayForSort[i].getArrayY()), arrayForSort[i].getName());
         }
+//        Figures[] arrayForSort = createArrayOfRandomFigures(numbers);
+//        for (Figures figures : arrayForSort) {
+//            sortedArea.put(figures.countArea(figures.getArrayX(), figures.getArrayY()), figures.getName());
+//        }
         for (Map.Entry<Double, String> m : sortedArea.entrySet()) {
-            System.out.println(m.getValue() + " " + m.getKey());
+            System.out.println(m.getValue() + "  : " + m.getKey());
         }
     }
 }

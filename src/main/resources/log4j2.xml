@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug" strict="true"
+               name="XMLConfigTest" packages="com.autoSchoolPartFourAndThree">
+    <Filter type="ThresholdFilter" level="trace" />
+
+    <Appenders>
+        <Console name="STDOUT">
+            <Layout type="PatternLayout" pattern="%m %n" />
+        </Console>
+        <RollingFile name="rollingFile"
+                     fileName="target/log-output/log4j2.log"
+                     filePattern="logs/$${date:yyyy-MM-dd HH:mm:ss}/app-%d{ yyyy-MM-dd HH:mm:ss}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>%d %p %c %L %m %n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval = "1" />
+                <SizeBasedTriggeringPolicy
+                        size="250 MB" />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name= "com.autoSchoolPartFourAndThree" level="all" additivity="true">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Root level="ALL">
+            <AppenderRef ref="STDOUT" />
+            <AppenderRef ref="rollingFile" />
+        </Root>
+    </Loggers>
+</Configuration>
+
+

@@ -11,7 +11,7 @@
                      fileName="target/log-output/log4j2.log"
                      filePattern="logs/$${date:yyyy-MM-dd HH:mm:ss}/app-%d{ yyyy-MM-dd HH:mm:ss}-%i.log.gz">
             <PatternLayout>
-                <Pattern>%d yyyy-MM-dd HH:mm:ss %c{1.} [%t] %m%n</Pattern>
+                <Pattern>%d %p %c %L %m %n</Pattern>
             </PatternLayout>
             <Policies>
                 <TimeBasedTriggeringPolicy interval = "1" />
@@ -21,10 +21,10 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-        <Logger name= "com.autoSchoolPartFourAndThree" level="info" additivity="true">
+        <Logger name= "com.autoSchoolPartFourAndThree" level="all" additivity="true">
             <AppenderRef ref="Console"/>
         </Logger>
-        <Root level="INFO">
+        <Root level="ALL">
             <AppenderRef ref="STDOUT" />
             <AppenderRef ref="rollingFile" />
         </Root>
@@ -32,24 +32,3 @@
 </Configuration>
 
 
-<!--<Configuration status="WARN">-->
-
-<!--    <Appenders>-->
-<!--        <Console name="Console" target="SYSTEM_OUT">-->
-<!--            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>-->
-<!--        </Console>-->
-<!--    </Appenders>-->
-
-<!--    <Loggers>-->
-<!--        <Logger name= "com.autoSchoolPartFourAndThree;" level="debug" additivity="true">-->
-<!--            <AppenderRef ref="Console"/>-->
-<!--        </Logger>-->
-
-<!--        &lt;!&ndash; Root Logger &ndash;&gt;-->
-<!--        <Root level="all">-->
-<!--            <AppenderRef ref="Console"/>-->
-<!--        </Root>-->
-<!--    </Loggers>-->
-
-
-<!--</Configuration>-->

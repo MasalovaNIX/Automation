@@ -13,7 +13,7 @@ public class Main {
 
         taskOne();
         taskTwo();
-        Cat.taskThree();
+        taskThree();
         taskFour();
         taskFive();
         SixTask.sixTask();
@@ -52,22 +52,34 @@ public class Main {
 
     public static void taskTwo() throws IOException {
         System.out.println("Task 2");
-        Set<String> set = new HashSet<String>();
-        set.add("арбуз – ягода");
-        set.add("банан – трава");
-        set.add("вишня – ягода");
-        set.add("груша – фрукт");
-        set.add("дыня – овощ");
-        set.add("ежевика – куст");
-        set.add("жень-шень – корень");
-        set.add("земляника – ягода");
-        set.add("ирис – цветок");
-        set.add("картофель – клубень");
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("арбуз"," – ягода");
+        map.put("банан", "– трава");
+        map.put("вишня", "– ягода");
+        map.put("груша", "– фрукт");
+        map.put("дыня", "– овощ");
+        map.put("ежевика", "– куст");
+        map.put("жень-шень", "– корень");
+        map.put("земляника", "– ягода");
+        map.put("ирис", "– цветок");
+        map.put("картофель", "– клубень");
 
-        for (String text : set) {
-            System.out.println(text);
+        for (Map.Entry<String, String> item : map.entrySet()) {
+            System.out.println(item.getKey() + item.getValue());
         }
 
+    }
+
+    public static void taskThree() throws IOException {
+        System.out.println("Task 3");
+        HashMap<Cat, String> cats = new HashMap<Cat, String>();
+        for (int i = 0; i < 10; i++) {
+            cats.put(new Cat("Name " + i), "cat " + i );
+        }
+
+        for (Map.Entry<Cat, String> item : cats.entrySet()) {
+            System.out.printf(" %s   %s \n", item.getKey().getName(), item.getValue());
+        }
     }
 
     public static void taskFour() throws IOException {

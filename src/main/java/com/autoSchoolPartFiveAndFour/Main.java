@@ -21,14 +21,13 @@ public class Main {
         list.add("Лdddd");
 
         System.out.println("Длина каждого элемента списка:");
-        list.stream().forEach(elem -> System.out.println(String.valueOf(elem).length()));
+        list.stream().forEach(elem -> System.out.println(elem.length()));
 
         System.out.println("Не пустые элементы списка,не содержащие символ d:");
         list = list.stream().filter((s) -> !s.contains("d") && !s.trim().isEmpty()).collect(Collectors.toList());
         System.out.println(list);
 
         System.out.println("Элементы списка в алфавитном порядке:");
-        list = list.stream().sorted().collect(Collectors.toList());
-        System.out.println(list);
+        list.stream().sorted().forEach(System.out::println);
     }
 }
